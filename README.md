@@ -27,7 +27,7 @@ cd [project_name]
 make istall
 make setup
 ```
-You can now access your website in the browser under [https://localhost:8080](https://localhost:8080)
+You can now access your website in the browser under [http://localhost:8080](http://localhost:8080/)
 
 Default user [admin@admin.com] and password [admin]
 
