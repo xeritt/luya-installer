@@ -36,5 +36,8 @@ docker.start:
 docker.stop:
 	$(COMPOSE) down
 
+module:
+	./vendor/bin/luya module/create
+
 test:
 	@echo "Test done."
