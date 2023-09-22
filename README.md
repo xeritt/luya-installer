@@ -46,3 +46,9 @@ make docker.stop
 ```shell
 make docker.start
 ```
+
+## Create new module
+
+```shell
+make module
+```
