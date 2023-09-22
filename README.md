@@ -34,3 +34,15 @@ Default user [admin@admin.com] and password [admin]
 ### Official site LUYA 
 
 [https://luya.io/](https://luya.io/)
+
+## Stop docker
+
+```shell
+make docker.stop
+```
+
+## Start docker
+
+```shell
+make docker.start
+```
