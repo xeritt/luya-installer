@@ -12,7 +12,7 @@ Need opens ports 8080 and 43306.
 ## First step
 
 ```shell
-git clone [path git]
+git clone https://github.com/xeritt/luya-installer
 ```
 ## Second step
 Open Makefile and rename project_name.
