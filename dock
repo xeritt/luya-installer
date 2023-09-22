@@ -1,0 +1,89 @@
+#!/bin/bash
+
+echo "DOCK v.1.0"
+echo "Help programm with docker"
+echo "Copy to project dir and run ./dock"
+
+function mainMenu {
+	OPTION=$(whiptail --title  "Система управения docker" --menu  "Команды" 20 60 10 \
+	"ps" "Список контейнеров" \
+	"psshort" "Список контейнеров (ID NAME)" \
+	"stop" "Остановить контейнер" \
+	"images" "Список образов" \
+	"info" "Информация" \
+	"version" "Версия" \
+	"composeup" "Поднять compose" \
+	"composedown" "Остановить compose" \
+	3>&1 1>&2 2>&3)
+}
+
+function pressKey {
+	read -sn 1 -p 'Press any key to continue...';echo
+}
+
+curdir=$(pwd)
+
+function main {
+	
+	estatus=0
+	##echo $curdir
+	while [ $estatus = 0 ]
+	do
+		mainMenu
+		estatus=$?
+		##echo "Статус операции "$estatus		
+		if [ $estatus = 1 ];  then
+			exit
+		fi
+		
+		if [ $OPTION = "ps" ];  then
+			docker ps
+			pressKey
+			continue
+		fi
+		
+		if [ $OPTION = "psshort" ];  then
+			docker ps --format '{{.ID}} {{.Names}}'
+			pressKey
+			continue
+		fi
+
+		if [ $OPTION = "composeup" ];  then
+			docker-compose up -d
+			exit
+			continue
+		fi
+
+		if [ $OPTION = "composedown" ];  then
+			docker-compose down 
+			exit
+			continue
+		fi
+		
+		if [ $OPTION = "stop" ];  then
+			path1=$(docker ps --format '{{.Names}}')
+			res=""
+			for entry in $path1
+			do
+			  res=${res}${entry}" "${entry}" OFF "
+			done
+			
+			DISTROS=$(whiptail --title  "Выбор образа" --radiolist \
+			"Выберите проект?" 25 85 18 $res 3>&1 1>&2 2>&3)
+			exitstatus=$?
+
+			docker stop $DISTROS
+			pressKey
+			continue
+		fi
+		
+		if [ $OPTION = "images" ] || [ $OPTION = "info" ] || [ $OPTION = "version" ];  then
+			docker $OPTION
+			pressKey
+			continue
+		fi
+		##mainFunctions
+	done
+}
+
+main 
