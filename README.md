@@ -16,6 +16,7 @@ git clone [path git]
 ```
 ## Second step
 Open Makefile and rename project_name.
+
 project_name:=luya-kickstarter
 
 ## Next step 
@@ -26,7 +27,10 @@ cd [project_name]
 make istall
 make setup
 ```
-You can now access your website in the browser under [https://localhost:8080]
+You can now access your website in the browser under [https://localhost:8080](https://localhost:8080)
+
 Default user [admin@admin.com] and password [admin]
 
-### Official site LUYA [https://luya.io/]
+### Official site LUYA 
+
+[https://luya.io/](https://luya.io/)
