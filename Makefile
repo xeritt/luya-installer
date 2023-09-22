@@ -1,7 +1,4 @@
 project_name:=luya-kickstarter
-mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
-current_dir := $(dir $(mkfile_path))
-
 COMPOSE=docker-compose -p $(project_name) -f docker-compose.yml
 
 create:
@@ -39,3 +36,5 @@ docker.start:
 docker.stop:
 	$(COMPOSE) down
 
+test:
+	@echo "Test done."
