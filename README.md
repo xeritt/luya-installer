@@ -64,11 +64,13 @@ Configure config.php
 Add to components
 
 ```shell
-	'i18n' => [
-		'translations' => [
-			'*' => [
-			'class'          => 'yii\i18n\PhpMessageSource',
-			],
-		]
+'i18n' => [
+	'translations' => [
+		'*' => [
+		'class'          => 'yii\i18n\PhpMessageSource',
+		],
 	]
+]
 ```
+
+[https://github.com/schmunk42/yii2-giiant](https://github.com/schmunk42/yii2-giiant)
