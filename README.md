@@ -114,3 +114,9 @@ Configure configs/config.php
         ],        
     ]);
 ```
+
+## Add kartik GridView and etc. to crud generator Model/Form/Controller/Views
+
+```shell
+composer require kartik-v/yii2-grid "dev-master"
+```
