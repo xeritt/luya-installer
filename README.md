@@ -55,6 +55,8 @@ make module
 
 ## Config you project name and language
 
+Configure configs/config.php
+
 ```shell
 'siteTitle' => 'My Project',
 'defaultRoute' => 'cms',
