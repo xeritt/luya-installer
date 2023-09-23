@@ -52,3 +52,23 @@ make docker.start
 ```shell
 make module
 ```
+
+## Install Generator Model/Form/Controller/Views
+
+```shell
+composer require schmunk42/yii2-giiant:"@stable"
+```
+
+Configure config.php
+
+Add to components
+
+```shell
+	'i18n' => [
+		'translations' => [
+			'*' => [
+			'class'          => 'yii\i18n\PhpMessageSource',
+			],
+		]
+	]
+```
