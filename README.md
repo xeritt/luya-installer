@@ -55,6 +55,8 @@ make module
 
 ## Install Generator Model/Form/Controller/Views
 
+[https://github.com/schmunk42/yii2-giiant](https://github.com/schmunk42/yii2-giiant)
+
 ```shell
 composer require schmunk42/yii2-giiant:"@stable"
 ```
@@ -73,4 +75,4 @@ Add to components
 ]
 ```
 
-[https://github.com/schmunk42/yii2-giiant](https://github.com/schmunk42/yii2-giiant)
+[http://localghost/gii](http://localghost/gii)
