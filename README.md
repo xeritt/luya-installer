@@ -61,7 +61,7 @@ make module
 composer require schmunk42/yii2-giiant:"@stable"
 ```
 
-Configure config.php
+Configure configs/config.php
 
 Add to components
 
@@ -75,4 +75,14 @@ Add to components
 ]
 ```
 
+```shell
+'user' => [
+	'identityClass' => 'common\models\User',
+	'enableAutoLogin' => true,
+	'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
+]
+```
+
 [http://localhost:8080/gii](http://localhost:8080/gii)
+
+
