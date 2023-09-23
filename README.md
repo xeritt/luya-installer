@@ -53,6 +53,14 @@ make docker.start
 make module
 ```
 
+## Config you project name and language
+
+```shell
+'siteTitle' => 'My Project',
+'defaultRoute' => 'cms',
+'language' => 'ru-RU',
+```
+
 ## Install Generator Model/Form/Controller/Views
 
 [https://github.com/schmunk42/yii2-giiant](https://github.com/schmunk42/yii2-giiant)
