@@ -120,3 +120,11 @@ Configure configs/config.php
 ```shell
 composer require kartik-v/yii2-grid "dev-master"
 ```
+
+Configure configs/config.php add to modules
+
+```shell
+        'gridview' =>  [
+            'class' => '\kartik\grid\Module'
+        ]
+```
