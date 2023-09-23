@@ -96,3 +96,21 @@ Add to components
 [http://localhost:8080/gii](http://localhost:8080/gii)
 
 
+## Add you crud template to generator Model/Form/Controller/Views
+
+Configure configs/config.php
+
+```shell
+    $config->module('gii', [
+        'class' => 'yii\gii\Module',
+        'allowedIPs' => ['*'],
+        'generators' => [
+            'giiant-crud' => [
+                'class' => 'schmunk42\giiant\generators\crud\Generator',
+                'templates' => [
+                    'zbs' => '@app/generators/crud/zbs',
+                ],                
+            ]
+        ],        
+    ]);
+```
