@@ -75,4 +75,4 @@ Add to components
 ]
 ```
 
-[http://localghost/gii](http://localghost/gii)
+[http://localhost/gii](http://localhost/gii)
