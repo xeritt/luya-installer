@@ -1,10 +1,17 @@
 project_name:=luya-kickstarter
 COMPOSE=docker-compose -p $(project_name) -f docker-compose.yml
 
+# PHP_VERSION="php8.1.3/"
+# PHP_VERSION="php8.2.10/"
+# PHP_VERSION="yii2php8.2.4/"
+# default php version 7.4 
+PHP_VERSION=""
+
 create:
 	composer create-project luyadev/luya-kickstarter:^1.0 $(project_name)
 	cp Makefile $(project_name)
-	cp -f docker-compose.yml $(project_name)
+	cp -f $(PHP_VERSION)docker-compose.yml $(project_name)
+	cp -r -f $(PHP_VERSION)docker $(project_name)
 	@echo "Project create success. Go to project dir and run [make install]. After run [make setup]."
 
 install: install.logs copy_env docker.install

@@ -19,6 +19,13 @@ Open Makefile and rename project_name.
 
 project_name:=luya-kickstarter
 
+If you want change docker image PHP_VERSION.
+
+php8.1.3 php8.2.10 [Docker image wyveo/nginx-php-fpm](https://hub.docker.com/r/wyveo/nginx-php-fpm)
+
+yii2php8.2.4 [Docker image yiisoftware/yii2-php:8.2-fpm-nginx](https://github.com/yiisoft/yii2-docker/tree/master)
+
+
 ## Next step 
 
 ```text
@@ -115,7 +122,7 @@ Configure configs/config.php
     ]);
 ```
 
-## Add kartik GridView and etc. to crud generator Model/Form/Controller/Views
+## Add kartik GridView and etc. to crud generator
 
 ```shell
 composer require kartik-v/yii2-grid "dev-master"
@@ -124,7 +131,7 @@ composer require kartik-v/yii2-grid "dev-master"
 Configure configs/config.php add to modules
 
 ```shell
-        'gridview' =>  [
-            'class' => '\kartik\grid\Module'
-        ]
+'gridview' => [
+	'class' => '\kartik\grid\Module'
+]
 ```
