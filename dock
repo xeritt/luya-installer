@@ -6,14 +6,14 @@ echo "Copy to project dir and run ./dock"
 
 function mainMenu {
 	OPTION=$(whiptail --title  "Система управения docker" --menu  "Команды" 20 60 10 \
+	"composeup" "Поднять compose" \
+	"composedown" "Остановить compose" \
 	"ps" "Список контейнеров" \
 	"psshort" "Список контейнеров (ID NAME)" \
 	"stop" "Остановить контейнер" \
 	"images" "Список образов" \
 	"info" "Информация" \
 	"version" "Версия" \
-	"composeup" "Поднять compose" \
-	"composedown" "Остановить compose" \
 	"build" "Собрать из Dockerfile" \
 	3>&1 1>&2 2>&3)
 }

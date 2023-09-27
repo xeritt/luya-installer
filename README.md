@@ -25,6 +25,8 @@ php8.1.3 php8.2.10 [Docker image wyveo/nginx-php-fpm](https://hub.docker.com/r/w
 
 yii2php8.2.4 [Docker image yiisoftware/yii2-php:8.2-fpm-nginx](https://github.com/yiisoft/yii2-docker/tree/master)
 
+dwchiang-nginx-php8.2.9-fpm [Docker image dwchiang/nginx-php-fpm](https://github.com/dwchiang/nginx-php-fpm/tree/master)
+
 
 ## Next step 
 
