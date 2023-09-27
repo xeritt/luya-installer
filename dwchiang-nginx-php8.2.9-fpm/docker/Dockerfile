@@ -255,11 +255,11 @@ RUN apk add libpng-dev
 
 RUN docker-php-ext-install gd
 
-COPY ./docker/luya.sh /usr/local/bin/luya
-COPY ./docker/setup.sh /usr/local/bin/setup
+##COPY ./docker/luya.sh /usr/local/bin/luya
+##COPY ./docker/setup.sh /usr/local/bin/setup
 
-RUN chmod +x /usr/local/bin/luya
-RUN chmod +x /usr/local/bin/setup 
+##RUN chmod +x /usr/local/bin/luya
+##RUN chmod +x /usr/local/bin/setup 
 
 WORKDIR /app
 

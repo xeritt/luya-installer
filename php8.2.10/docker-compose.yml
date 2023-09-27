@@ -26,11 +26,10 @@ services:
       - ./logs/error.log:/dev/stderr
       - ./logs/access.log:/dev/stdout
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - ./docker/luya.sh:/usr/local/bin/luya
-      - ./docker/setup.sh:/usr/local/bin/setup
+      - ./bin/luya.sh:/usr/local/bin/luya
+      - ./bin/setup.sh:/usr/local/bin/setup
     ports:
       - "8080:80"
     restart: unless-stopped
-#    command: chmod +x /usr/local/bin/luya && chmod +x /usr/local/bin/setup
 volumes:
   mysql-volume:

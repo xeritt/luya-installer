@@ -13,6 +13,7 @@ create:
 	cp Makefile $(project_name)
 	cp -f $(PHP_VERSION)docker-compose.yml $(project_name)
 	cp -r -f $(PHP_VERSION)docker $(project_name)
+	cp -r -f bin/ $(project_name)
 	@echo "Project create success. Go to project dir and run [make install]. After run [make setup]."
 
 install: install.logs copy_env docker.install
