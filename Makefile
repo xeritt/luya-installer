@@ -1,10 +1,10 @@
 project_name:=luya-kickstarter
 COMPOSE=docker-compose -p $(project_name) -f docker-compose.yml
 
-# PHP_VERSION="php8.1.3/"
-# PHP_VERSION="php8.2.10/"
-# PHP_VERSION="yii2php8.2.4/"
-# PHP_VERSION="dwchiang-nginx-php8.2.9-fpm/"
+# PHP_VERSION="php/php8.1.3/"
+# PHP_VERSION="php/php8.2.10/"
+# PHP_VERSION="php/yii2php8.2.4/"
+# PHP_VERSION="php/dwchiang-nginx-php8.2.9-fpm/"
 # default php version 7.4 
 PHP_VERSION=""
 
