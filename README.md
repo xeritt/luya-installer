@@ -58,6 +58,13 @@ make docker.start
 
 ## Create new module
 
+Configure configs/config.php
+
+```shell
+'user' => [
+	'class' => 'common\models\User',
+```
+
 ```shell
 make module
 ```
@@ -136,4 +143,30 @@ Configure configs/config.php add to modules
 'gridview' => [
 	'class' => '\kartik\grid\Module'
 ]
+```
+
+## Install additional components for module generator
+
+Yii2 Framework web closures, traits and helpers
+
+[https://github.com/dmstr/yii2-web](https://github.com/dmstr/yii2-web)
+
+```shell
+composer require --prefer-dist dmstr/yii2-web:dev-master
+```
+
+Yii 2 Font Awesome Asset Bundle
+
+[https://github.com/rmrevin/yii2-fontawesome](https://github.com/rmrevin/yii2-fontawesome)
+
+```shell
+composer require "rmrevin/yii2-fontawesome:~3.5"
+```
+
+Widgets for AdminLte theme
+
+[https://github.com/Insolita/yii2-adminlte-widgets/tree/master](https://github.com/Insolita/yii2-adminlte-widgets/tree/master)
+
+```shell
+composer require --prefer-dist insolita/yii2-adminlte-widgets "^3.2
 ```
