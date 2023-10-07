@@ -1,12 +1,12 @@
 project_name:=luya-kickstarter
 COMPOSE=docker-compose -p $(project_name) -f docker-compose.yml
 
+PHP_VERSION=""
+# default php version 7.4 
 # PHP_VERSION="php/php8.1.3/"
 # PHP_VERSION="php/php8.2.10/"
 # PHP_VERSION="php/yii2php8.2.4/"
 # PHP_VERSION="php/dwchiang-nginx-php8.2.9-fpm/"
-# default php version 7.4 
-PHP_VERSION=""
 
 create:
 	composer create-project luyadev/luya-kickstarter:^1.0 $(project_name)
@@ -47,6 +47,11 @@ docker.stop:
 
 module:
 	./vendor/bin/luya module/create
+
+install.flash:
+	cp -r -f views/layouts/main.php $(project_name_)/views/layouts/
+	cp -r -f views/layouts/flash.php $(project_name_)/views/layouts/
+	@echo "Install flash success."
 
 test:
 	@echo "Test done."
