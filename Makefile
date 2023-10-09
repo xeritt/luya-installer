@@ -53,5 +53,8 @@ install.flash:
 	cp -r -f views/layouts/flash.php $(project_name_)/views/layouts/
 	@echo "Install flash success."
 
+install.smtp:
+	docker run --rm -it -p 3000:80 -p 2525:25 rnwood/smtp4dev
+	@echo "Install smtp4dev success.[Web localhost:3000 smtp 2525]"
 test:
 	@echo "Test done."

@@ -56,20 +56,7 @@ make docker.stop
 make docker.start
 ```
 
-## Create new module
-
-Configure configs/config.php
-
-```shell
-'user' => [
-	'class' => 'common\models\User',
-```
-
-```shell
-make module
-```
-
-## Config you project name and language
+## Config you project name and language, resetPassword, emailVerification
 
 Configure configs/config.php
 
@@ -77,6 +64,18 @@ Configure configs/config.php
 'siteTitle' => 'My Project',
 'defaultRoute' => 'cms',
 'language' => 'ru-RU',
+```
+
+```shell
+       'admin' => [
+            'class' => 'luya\admin\Module',
+            'secureLogin' => false, // when enabling secure login, the mail component must be proper configured otherwise the auth token mail will not send.
+            'strongPasswordPolicy' => false, // If enabled, the admin user passwords require strength input with special chars, lower, upper, digits and numbers
+            'interfaceLanguage' => 'ru', // Admin interface default language.
+            'autoBootstrapQueue' => true, // Enables the fake cronjob by default, read more about queue/scheduler: https://luya.io/guide/app-queue
+            'resetPassword' => true,
+            'emailVerification' => true,
+        ],
 ```
 
 ## Install Generator Model/Form/Controller/Views
@@ -126,6 +125,10 @@ Configure configs/config.php
                 'templates' => [
                     'zbs' => '@app/generators/crud/zbs',
                 ],                
+                //change base class for admin
+                'baseControllerClass' => 'luya\admin\base\Controller',
+                //change base class for frontend
+                //'baseControllerClass' => '\luya\web\Controller'
             ]
         ],        
     ]);
@@ -135,6 +138,19 @@ Configure configs/config.php
 
 ```shell
 composer require kartik-v/yii2-grid "dev-master"
+```
+
+## Create new module
+
+Configure configs/config.php ONLY GENERATE. After off this option.
+
+```shell
+'user' => [
+	'class' => 'common\models\User',
+```
+
+```shell
+make module
 ```
 
 Configure configs/config.php add to modules
@@ -170,3 +186,35 @@ Widgets for AdminLte theme
 ```shell
 composer require --prefer-dist insolita/yii2-adminlte-widgets "^3.2
 ```
+
+## Install Mailer yii2-symfonymailer 
+
+[yii2-symfonymailer](https://github.com/yiisoft/yii2-symfonymailer)
+
+```shell
+composer.phar require --prefer-dist yiisoft/yii2-symfonymailer
+```
+Configure configs/config.php add to components
+
+```shell
+	'mailer' => [
+            'class' => \yii\symfonymailer\Mailer::class,            
+            'transport' => [
+                'scheme' => 'smtp',
+                'host' => 'localhost',
+                'username' => 'user',
+                'password' => 'pass',
+                'port' => 25,
+                'dsn' => 'native://default',
+            ],
+            //'viewPath' => '@common/mail',
+            'viewPath' => '@app/modules/signup/common/mail',
+            // send all mails to a file by default. You have to set
+            // 'useFileTransport' to false and configure transport
+            // for the mailer to send real emails.
+            'useFileTransport' => false,
+        ]
+```
+
+
+
